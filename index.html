@@ -1,8 +1,72 @@
 <!DOCTYPE html>
-<html>
-<head><title>My Portfolio</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Builder Pattern Demo 🍔</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      margin-bottom: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      background: #f5f5f5;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e0e0e0;
+    }
+    .burger-output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 3px 0;
+    }
+  </style>
+</head>
 <body>
-<h1>Hello! I'm a budding software engineer.<h1>
-<p>This is my first web page using Git.</p>
+
+  <h1>Builder Pattern Demo 🍔</h1>
+  <p><b>Builder Pattern:</b> Construct complex objects step by step.</p>
+
+  <button onclick="addIngredient('🥯 Bun')">Add Bun</button>
+  <button onclick="addIngredient('🥩 Patty')">Add Patty</button>
+  <button onclick="addIngredient('🧀 Cheese')">Add Cheese</button>
+  <button onclick="addIngredient('🥬 Lettuce')">Add Lettuce</button>
+  <button onclick="finishBurger()">Finish Burger ✅</button>
+
+  <div class="burger-output">
+    <h3>Your Final Burger:</h3>
+    <ul id="burgerList"></ul>
+  </div>
+
+  <script>
+    const burgerList = document.getElementById('burgerList');
+
+    function addIngredient(item) {
+      const li = document.createElement('li');
+      li.textContent = item;
+      burgerList.appendChild(li);
+    }
+
+    function finishBurger() {
+      alert("🍔 Your burger is ready!");
+    }
+  </script>
+
 </body>
 </html>
